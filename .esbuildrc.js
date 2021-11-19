@@ -16,22 +16,7 @@ export default {
 		'xlsx'
 	],
 	plugins: [
-		/**
-		 * Transforms all dynamic imports that contain a template literal varable and
-		 * has an extension passed in by transformExtensions. I.E. import(`../../${file}.vue)
-		 * will be turned into static imports of every possible valid import it could be. It then
-		 * uses the static import reference in the file. Reason for this is we want esbuild
-		 * to process the possible imports that are .vue (SFC vue) files so they can be
-		 * processed by the EsbuildVue plugin and made into valid javascript that nodejs can run.
-		 *
-		 * Also with this plugin is that if there exists a dynamic import like I.E. import(`../../$file}.js`)
-		 * that could be resolved at runtime just fine by nodejs, but the only issue is that the relative
-		 * file path is now different due to the bundled file produced by esbuild being in likely differnt
-		 * file location. changeRelativeToAbsolute will fix this issue by changing all relative imports to
-		 * absolute ones. I will also note that the dynamic import in my project needs to be relative due
-		 * to also using vite for production builds which uses rollup internally.
-		 * Rollup requires all dynamic imports be relative, so I can't just use process.cwd() in the source code.
-		 */
+		// see https://github.com/RtVision/esbuild-dynamic-import
 		DynamicImport({ transformExtensions: ['.vue'], changeRelativeToAbsolute: true }),
 		// Current plugin is for Vue 2 SFC https://www.npmjs.com/package/esbuild-vue
 		// for Vue 3 SFC https://www.npmjs.com/package/esbuild-plugin-vue3
