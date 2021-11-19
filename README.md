@@ -1,14 +1,14 @@
 Mocha Esbuild
 =============
 
-Run tests with mocha compiled by esbuild at lightning fast [soeeds](https://esbuild.github.io/). 
+Run tests with mocha compiled by esbuild at lightning fast [speeds](https://esbuild.github.io/). 
 
 CLI requires a .esbuildrc.js file with an annotated example [here](https://github.com/RtVision/mocha-esbuild/blob/master/.esbuildrc.js)
 while its possible it would work only the defaults it really depends on your projects setup.
 
-I personally use this to compile vue SFC components then are tested with mocha and have seen pretty big speed increases.
-One in partically that stood out to me was webpack building a single file took 1 minute and 15s while esbuild is it in about 15s.
-When developing tests this time saving really adds up.
+I personally use made this to compile vue SFC components that are then tested with mocha and have seen pretty big speed increases.
+One in partically that stood out to me was webpack building a single test file and all ites dependencies tok 1 minute and 15s while
+esbuild is it in about 15s. When developing tests this time saving really adds up!
 
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
