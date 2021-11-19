@@ -1,5 +1,5 @@
 {
-  "name": "mocha-esbuild",
+  "name": "@rtvision/mocha-esbuild",
   "description": "Run tests with mocha compiled by esbuild",
   "version": "0.1.0",
   "author": "Kalvens (@kalvenschraut)",
@@ -54,9 +54,8 @@
   "repository": "RtVision/mocha-esbuild",
   "scripts": {
     "posttest": "eslint . --ext .ts --config .eslintrc.json",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev readme",
-    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif-dev readme && git add README.md"
+    "prepack": "rm -rf lib && tsc -b",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\""
   },
   "types": "lib/index.d.ts"
 }
