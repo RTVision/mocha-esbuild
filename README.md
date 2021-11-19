@@ -25,7 +25,6 @@ npm i --save-dev @rtvision/mocha-esbuild
 ```sh-session
 npx mocha-esbuild --help
 Run tests with mocha compiled by esbuild
-
 USAGE
   $ mocha-esbuild [FILE]
 
