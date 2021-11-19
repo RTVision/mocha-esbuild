@@ -1,16 +1,15 @@
-mocha-esbuild
+Mocha Esbuild
 =============
 
 Run tests with mocha compiled by esbuild
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/mocha-esbuild.svg)](https://npmjs.org/package/mocha-esbuild)
-[![Downloads/week](https://img.shields.io/npm/dw/mocha-esbuild.svg)](https://npmjs.org/package/mocha-esbuild)
+[![Version](https://img.shields.io/npm/v/mocha-esbuild.svg)](https://npmjs.org/package/@rtvision/mocha-esbuild)
+[![Downloads/week](https://img.shields.io/npm/dw/mocha-esbuild.svg)](https://npmjs.org/package/@rtvision/mocha-esbuild)
 [![License](https://img.shields.io/npm/l/mocha-esbuild.svg)](https://github.com/RtVision/mocha-esbuild/blob/master/package.json)
 
 <!-- toc -->
 * [Usage](#usage)
-* [Commands](#commands)
 <!-- tocstop -->
 # Usage
 <!-- usage -->
@@ -26,7 +25,3 @@ USAGE
 ...
 ```
 <!-- usagestop -->
-# Commands
-<!-- commands -->
-
-<!-- commandsstop -->

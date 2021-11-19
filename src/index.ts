@@ -112,7 +112,7 @@ class MochaEsbuild extends Command {
 				console.error('watch build failed:', error);
 			} else {
 				console.clear();
-				this.log(Chalk.green('Rebuild successful, starting tests'))
+				this.log(Chalk.green('Rebuild successful, starting tests'));
 				initWorker(outputFile, { mochaOptions, mochaConfigPath: flags.mochaConfigPath });
 			}
 		};
