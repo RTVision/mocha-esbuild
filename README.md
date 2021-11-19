@@ -16,12 +16,14 @@ esbuild is it in about 15s. When developing tests this time saving really adds u
 [![Downloads/week](https://img.shields.io/npm/dw/mocha-esbuild.svg)](https://npmjs.org/package/@rtvision/mocha-esbuild)
 [![License](https://img.shields.io/npm/l/mocha-esbuild.svg)](https://github.com/RtVision/mocha-esbuild/blob/master/package.json)
 
-<!-- toc -->
-* [Usage](#usage)
-<!-- tocstop -->
+# Install
+``` sh-session
+npm i --save-dev @rtvision/mocha-esbuild
+```
+
 # Usage
 ```sh-session
-mocha-esbuild --help
+npx mocha-esbuild --help
 Run tests with mocha compiled by esbuild
 
 USAGE
