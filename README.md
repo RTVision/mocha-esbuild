@@ -1,5 +1,10 @@
 Mocha Esbuild
 =============
+[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+[![Version](https://img.shields.io/npm/v/mocha-esbuild.svg)](https://npmjs.org/package/@rtvision/mocha-esbuild)
+[![Downloads/week](https://img.shields.io/npm/dw/mocha-esbuild.svg)](https://npmjs.org/package/@rtvision/mocha-esbuild)
+[![License](https://img.shields.io/npm/l/mocha-esbuild.svg)](https://github.com/RtVision/mocha-esbuild/blob/master/package.json)
+
 
 Run tests with mocha compiled by esbuild at lightning fast [speeds](https://esbuild.github.io/). 
 
@@ -10,11 +15,6 @@ I personally use made this to compile vue SFC components that are then tested wi
 One in partically that stood out to me was webpack building a single test file and all ites dependencies tok 1 minute and 15s while
 esbuild is it in about 15s. When developing tests this time saving really adds up!
 
-
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/mocha-esbuild.svg)](https://npmjs.org/package/@rtvision/mocha-esbuild)
-[![Downloads/week](https://img.shields.io/npm/dw/mocha-esbuild.svg)](https://npmjs.org/package/@rtvision/mocha-esbuild)
-[![License](https://img.shields.io/npm/l/mocha-esbuild.svg)](https://github.com/RtVision/mocha-esbuild/blob/master/package.json)
 
 # Install
 ``` sh-session
