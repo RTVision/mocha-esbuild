@@ -21,11 +21,11 @@ export default {
 		// Current plugin is for Vue 2 SFC https://www.npmjs.com/package/esbuild-vue
 		// for Vue 3 SFC https://www.npmjs.com/package/esbuild-plugin-vue3
 		EsbuildVue(),
-		// since we are running tests inde nodejs only include the packages that need
+		// since we are running tests in nodejs only include the packages that need
 		// to be processed by esbuild for whatever reason. That way the bundled file
-		// size can be decreased and defer to node at runtime to load the exclude packages
-		// note including a package down below will likely pull in its dependencies also
-		// For example vue-pdf was then pulling in pdfjs-dst work, I had to add that
+		// size can be decreased and defer to node at runtime to load the exclude packages.
+		// A note, including a package down below will likely pull in its dependencies also
+		// For example vue-pdf was then pulling in pdfjs-dst worker, I had to add that
 		// to the externals array above to explicitly disallow bundling that in
 		esbuildPluginNodeExternals({
 			include: [
