@@ -15,6 +15,10 @@ I personally made this CLI to compile vue SFC components that are then tested wi
 One in partically that stood out to me was webpack building a single test file and all its dependencies took 1 minute and 15s while
 esbuild is it in about 15s. When developing tests this time saving really adds up!
 
+If you need alias's to work like webpacks common @ resolving to ./src then you can add a tsconfig.json or a jsconfig.json file and add
+the aliases like described [here](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping). You can use
+this even if you don't have any typescript in your project since esbuild will look at your config file regardless.
+
 
 # Install
 ``` sh-session
