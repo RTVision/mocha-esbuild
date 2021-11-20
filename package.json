@@ -44,7 +44,9 @@
   ],
   "homepage": "https://github.com/RtVision/mocha-esbuild",
   "keywords": [
-    "oclif"
+    "oclif",
+    "mocha",
+    "esbuild"
   ],
   "license": "MIT",
   "main": "lib/index.js",
