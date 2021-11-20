@@ -57,5 +57,5 @@ OPTIONS
   --retries=retries                  Number of times to retry failed tests
 ```
 
-#License
+## License
 MIT © RtVision
