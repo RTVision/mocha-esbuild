@@ -12,9 +12,11 @@
     "@oclif/config": "^1",
     "esbuild": "^0.13.14",
     "fast-glob": "^3.2.7",
-    "source-map-support": "^0.5.21",
     "tmp-promise": "^3.0.3",
     "tslib": "^2.3.1"
+  },
+  "peerDependencies": {
+    "source-map-support": "^0.5.21"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.26.0",

@@ -73,10 +73,16 @@ class MochaEsbuild extends Command {
 			default: false,
 			description: 'Enable watch mode for esbuild. Will overwrite watch if custom config provided'
 		}),
-		sourcemaps: flags.boolean({
+		sourcemap: flags.boolean({
 			char: 's',
 			default: false,
 			description: 'Generates inline sourcemaps for easier debugging. Will overwrite sourcemaps if custom config provided'
+		}),
+		noImportSourceMapSupport: flags.boolean({
+			char: '',
+			default: false,
+			description: 'Disable the importing source-map-support package when sourcemap enabled',
+			dependsOn: ['sourcemap']
 		}),
 		...mochaFlags
 	};
@@ -119,7 +125,8 @@ class MochaEsbuild extends Command {
 		this.log(Chalk.cyan('Config processed, starting esbuild'));
 		await EsbuildRunner(args.file, outputFile, {
 			watch: flags.watch,
-			sourcemaps: flags.sourcemaps,
+			sourcemap: flags.sourcemap,
+			importSourceMapSupport: !flags.noImportSourceMapSupport,
 			esbuildConfigPath: flags.esbuildConfig,
 			onRebuild
 		});

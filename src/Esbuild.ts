@@ -24,12 +24,12 @@ function addJsBanner (config: EsbuildOptions, jsBanner: string) {
 	} else if (typeof config.banner.js === 'undefined') {
 		config.banner.js = jsBanner;
 	} else {
-		config.banner.js = `${jsBanner}\n${config.banner.jsBanner}`;
+		config.banner.js = `${jsBanner}\n${config.banner.js}`;
 	}
 	return config;
 }
 
-export default async function (entryPoint : string, outputFile : string, { watch, sourcemaps, esbuildConfigPath, onRebuild } : EsbuildFlags) {
+export default async function (entryPoint : string, outputFile : string, { watch, sourcemap, esbuildConfigPath, onRebuild, importSourceMapSupport } : EsbuildFlags) {
 	entryPoint = resolveRelativePath(entryPoint);
 
 	// doesn't return any files if just plain import path;
@@ -61,12 +61,14 @@ export default async function (entryPoint : string, outputFile : string, { watch
 		}
 	}
 
-	if (sourcemaps) {
+	if (sourcemap) {
 		esbuildConfig.sourcemap = 'inline';
-		const sourceMapSupport = esbuildConfig.format?.toLowerCase() === 'esm'
-			? `import '@rtvision/mocha-esbuild/node_modules/source-map-support/register.js';`
-			: `require('@rtvision/mocha-esbuild/node_modules/source-map-support').install();`;
-		addJsBanner(esbuildConfig, sourceMapSupport);
+		if (importSourceMapSupport) {
+			const sourceMapSupport = esbuildConfig.format?.toLowerCase() === 'esm'
+				? `import 'source-map-support/register.js';`
+				: `require('source-map-support').install();`;
+			addJsBanner(esbuildConfig, sourceMapSupport);
+		}
 	}
 
 	addTopLevelRequire(esbuildConfig);

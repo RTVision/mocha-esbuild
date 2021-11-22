@@ -13,7 +13,8 @@ export interface RunMochaOptions {
 
 export interface EsbuildFlags {
 	watch?: boolean,
-	sourcemaps?: boolean,
+	sourcemap?: boolean,
+	importSourceMapSupport: boolean,
 	esbuildConfigPath?: string,
 	onRebuild?: EsbuildWatchMode['onRebuild']
 }
