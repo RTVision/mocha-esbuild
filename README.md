@@ -20,7 +20,8 @@ the aliases like described [here](https://www.typescriptlang.org/docs/handbook/m
 this even if you don't have any typescript in your project since esbuild will look at your config file regardless.
 
 If you want to use sourcemaps, you will need to either start mocha-esbuild with the node --enable-source-maps flag i.e.
-`node --enable-source-maps node_modules/@rtvision/bin/run -s` or do `npm install --save-dev source-map-support`.
+`node --enable-source-maps node_modules/@rtvision/bin/run -s --noImportSourceMapSupport` or do `npm install --save-dev source-map-support`.
+[Until node allows scripts to determine](https://github.com/nodejs/node/issues/38817) whether or not sources maps should be on this is only solution I know of. 
 
 
 # Install
