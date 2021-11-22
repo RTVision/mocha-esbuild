@@ -1,9 +1,9 @@
 Mocha Esbuild
 =============
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/mocha-esbuild.svg)](https://npmjs.org/package/@rtvision/mocha-esbuild)
-[![Downloads/week](https://img.shields.io/npm/dw/mocha-esbuild.svg)](https://npmjs.org/package/@rtvision/mocha-esbuild)
-[![License](https://img.shields.io/npm/l/mocha-esbuild.svg)](https://github.com/RtVision/mocha-esbuild/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/@rtvision/mocha-esbuild.svg)](https://npmjs.org/package/@rtvision/mocha-esbuild)
+[![Downloads/week](https://img.shields.io/npm/dw/@rtvision/mocha-esbuild.svg)](https://npmjs.org/package/@rtvision/mocha-esbuild)
+[![License](https://img.shields.io/npm/l/@rtvision/mocha-esbuild.svg)](https://github.com/RtVision/mocha-esbuild/blob/master/package.json)
 
 
 Run tests with mocha compiled by esbuild at lightning fast [speeds](https://esbuild.github.io/). 
