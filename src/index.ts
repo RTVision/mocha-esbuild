@@ -80,8 +80,7 @@ class MochaEsbuild extends Command {
 		}),
 		noImportSourceMapSupport: flags.boolean({
 			default: false,
-			description: 'Disable the importing source-map-support package when sourcemap enabled',
-			dependsOn: ['sourcemap']
+			description: 'Disable the importing source-map-support package when sourcemap enabled'
 		}),
 		...mochaFlags
 	};
