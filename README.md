@@ -19,6 +19,9 @@ If you need alias's to work like webpacks common @ resolving to ./src then you c
 the aliases like described [here](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping). You can use
 this even if you don't have any typescript in your project since esbuild will look at your config file regardless.
 
+If you want to use sourcemaps, you will need to either start mocha-esbuild with the node --enable-source-maps flag i.e.
+`node --enable-source-maps node_modules/@rtvision/bin/run -s` or do `npm install --save-dev source-map-support`.
+
 
 # Install
 ``` sh-session
