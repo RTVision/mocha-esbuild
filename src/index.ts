@@ -110,6 +110,10 @@ class MochaEsbuild extends Command {
 			await cleanUp(outputFile);
 			process.exit();
 		});
+		process.on('uncaughtException', async () => {
+			await cleanUp(outputFile);
+			process.exit();
+		});
 
 		const onRebuild : EsbuildFlags['onRebuild'] = error => {
 			if (error) {
