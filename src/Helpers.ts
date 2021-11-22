@@ -16,8 +16,11 @@ export function importESM (specifier: string) {
 	return indirectImport(specifier);
 }
 
+let previousWorker: Worker | null = null;
 export function initWorker (bundledFile : string, { mochaOptions, mochaConfigPath }: { mochaOptions?: CustomMochaOptions | null, mochaConfigPath?: string }) : void {
 	const worker = new Worker(pathResolve(__dirname, './worker/MochaEsbuildWorker.js'), { workerData: { filename: bundledFile, mochaOptions, mochaConfigPath } });
+	if (previousWorker !== null) previousWorker.terminate();
+	previousWorker = worker;
 
 	worker.once('message', () => {
 		worker.terminate();
