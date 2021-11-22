@@ -63,10 +63,10 @@ export default async function (entryPoint : string, outputFile : string, { watch
 
 	if (sourcemaps) {
 		esbuildConfig.sourcemap = 'inline';
-		const sourceMapSupprt = esbuildConfig.format?.toLowerCase() === 'esm'
-			? `import 'source-map-support/register';`
-			: `require('source-map-support').install();`;
-		addJsBanner(esbuildConfig, sourceMapSupprt);
+		const sourceMapSupport = esbuildConfig.format?.toLowerCase() === 'esm'
+			? `import '@rtvision/mocha-esbuild/node_modules/source-map-support/register.js';`
+			: `require('@rtvision/mocha-esbuild/node_modules/source-map-support').install();`;
+		addJsBanner(esbuildConfig, sourceMapSupport);
 	}
 
 	addTopLevelRequire(esbuildConfig);
