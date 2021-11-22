@@ -1,7 +1,7 @@
 {
   "name": "@rtvision/mocha-esbuild",
   "description": "Run tests with mocha compiled by esbuild",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Kalvens (@kalvenschraut)",
   "bin": {
     "mocha-esbuild": "./bin/run"

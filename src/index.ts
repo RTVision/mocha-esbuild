@@ -79,7 +79,6 @@ class MochaEsbuild extends Command {
 			description: 'Generates inline sourcemaps for easier debugging. Will overwrite sourcemaps if custom config provided'
 		}),
 		noImportSourceMapSupport: flags.boolean({
-			char: '',
 			default: false,
 			description: 'Disable the importing source-map-support package when sourcemap enabled',
 			dependsOn: ['sourcemap']
