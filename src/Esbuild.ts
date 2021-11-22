@@ -71,6 +71,10 @@ export default async function (entryPoint : string, outputFile : string, { watch
 
 	addTopLevelRequire(esbuildConfig);
 
+	if (esbuildConfig.format?.toLowerCase() !== 'esm') {
+		esbuildConfig.outfile?.replace(/\.mjs$/, '.js');
+	}
+
 	if (watch) {
 		esbuildConfig.watch = { onRebuild };
 	}
