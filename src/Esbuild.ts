@@ -12,16 +12,21 @@ function addTopLevelRequire (config : EsbuildOptions) {
 	if (config.format?.toLowerCase() === 'esm') {
 		// https://github.com/evanw/esbuild/issues/946#issuecomment-814703190
 		const jsBanner = `import { createRequire as topLevelCreateRequire } from 'module';\nconst require = topLevelCreateRequire(import.meta.url);`;
-		if (typeof config.banner === 'undefined') {
-			config.banner = {
-				js: jsBanner
-			};
-		} else if (typeof config.banner.js === 'undefined') {
-			config.banner.js = jsBanner;
-		} else {
-			config.banner.js = `${jsBanner}\n${config.banner.jsBanner}`;
-		}
+		addJsBanner(config, jsBanner);
 	}
+}
+
+function addJsBanner (config: EsbuildOptions, jsBanner: string) {
+	if (typeof config.banner === 'undefined') {
+		config.banner = {
+			js: jsBanner
+		};
+	} else if (typeof config.banner.js === 'undefined') {
+		config.banner.js = jsBanner;
+	} else {
+		config.banner.js = `${jsBanner}\n${config.banner.jsBanner}`;
+	}
+	return config;
 }
 
 export default async function (entryPoint : string, outputFile : string, { watch, sourcemaps, esbuildConfigPath, onRebuild } : EsbuildFlags) {
@@ -56,14 +61,18 @@ export default async function (entryPoint : string, outputFile : string, { watch
 		}
 	}
 
+	if (sourcemaps) {
+		esbuildConfig.sourcemap = 'inline';
+		const sourceMapSupprt = esbuildConfig.format?.toLowerCase() === 'esm'
+			? `import 'source-map-support/register';`
+			: `require('source-map-support').install();`;
+		addJsBanner(esbuildConfig, sourceMapSupprt);
+	}
+
 	addTopLevelRequire(esbuildConfig);
 
 	if (watch) {
 		esbuildConfig.watch = { onRebuild };
-	}
-
-	if (sourcemaps) {
-		esbuildConfig.sourcemap = 'inline';
 	}
 
 	return Esbuild(esbuildConfig);
