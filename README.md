@@ -21,7 +21,8 @@ this even if you don't have any typescript in your project since esbuild will lo
 
 If you want to use sourcemaps, you will need to either start mocha-esbuild with the node --enable-source-maps flag i.e.
 `node --enable-source-maps node_modules/@rtvision/bin/run -s --noImportSourceMapSupport` or do `npm install --save-dev source-map-support`.
-[Until node allows scripts to determine](https://github.com/nodejs/node/issues/38817) whether or not sources maps should be on this is only solution I know of. 
+[Until node allows scripts to determine](https://github.com/nodejs/node/issues/38817) whether or not sources maps should be on this is only solution I know of.
+Note that this does introduce some big overhead for bigger files/projects, I myself notice several seconds of slowdown in startup time of the tests. I only enable it while developing tests or rerunning a failed test locally.
 
 
 # Install
